@@ -1,0 +1,96 @@
+@font-face {
+    font-family: 'Interceptor';
+    src: url('assets/Interceptor.otf');
+}
+
+body {
+  background-color: black;
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+#bg {
+  position: relative;
+  display: inline-block; /* make container match the image size */
+}
+
+.bg-image {
+  width: 100%; 
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.portal {
+  width: 20%;
+  height: auto;
+  position: absolute;
+  left: 50%;
+  top: 43%;
+  transform: translate(-50%, -50%); /* center portal transform reference point */
+}
+
+.portal:hover {
+  width: 22%;
+  cursor: pointer;
+}
+
+#arrows {
+  width: 65%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); /* center portal transform reference point */
+  animation: fadeIn 1s ease;
+}
+
+#dialogue-popup {
+  animation: fadeIn 0.7s ease;
+}
+
+#dialogue-container {
+  width: 80%;
+  height: auto;
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translate(-50%, -50%); /* center portal transform reference point */
+}
+
+#dialogue-text {
+  font-family: 'Interceptor';
+  color: white;
+  width: 50%;
+  font-size: 2vw;
+  position: absolute;
+  left: 48%;
+  top: 17%;
+  transform: translate(-50%, -50%);
+}
+
+#close-btn {
+  padding: 0vh 1vw;
+  color: white;
+  background: none;
+  font-size: 3vw;
+  position: absolute;
+  left: 17%;
+  top: 25%;
+  transform: translate(-50%, -50%); /* center portal transform reference point */
+}
+
+#close-btn:hover {
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    /* transform: scale(0.5); */
+  }  
+  to {
+    opacity: 1;
+    /* transform: scale(1); */
+  }
+}
