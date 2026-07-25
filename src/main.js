@@ -1,6 +1,6 @@
 // for neocities' thumbnail imaging
 if (navigator.userAgent === "Screenjesus") {
-    document.body.innerHTML = '<img src="src/assets/thumbnail.webp" style="width:100%;height:auto;object-fit:fit;">';
+    document.body.innerHTML = '<img src="assets/thumbnail.webp" style="width:100%;height:auto;object-fit:fit;">';
 }
 
 const portalAudio = document.getElementById("portal-audio");
