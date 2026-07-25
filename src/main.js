@@ -3,6 +3,9 @@ if (navigator.userAgent === "Screenjesus") {
     document.body.innerHTML = '<img src="src/assets/thumbnail.webp" style="width:100%;height:auto;object-fit:fit;">';
 }
 
+const portalAudio = document.getElementById("portal-audio");
+const typingAudio = document.getElementById("typing-audio");
+
 const bg = document.getElementById("bg");
 const popup = document.getElementById("dialogue-popup");
 const dialogueContainer = document.getElementById("dialogue-container");
@@ -17,13 +20,18 @@ const TEXT = ":p lol can't (too lazy to) figure out how to upload the actual web
 let timer;
 let i = 0;
 
+portalAudio.volume = 0.40; // 40% volume
+
 // hide arrows
 arrows.style.display = "none";
 
 // show popup when page loads
 popup.style.display = "flex";
 
-setTimeout(typeWriter, DELAY);
+setTimeout(() => {
+    typingAudio.play();
+    typeWriter();
+}, DELAY);
 
 // auto close after 8 sec
 timer = setTimeout(closePopup, 11000);
@@ -34,12 +42,15 @@ function typeWriter() {
         dialogueText.textContent += TEXT.charAt(i);
         i++;
         setTimeout(typeWriter, SPEED);
+    } else {
+        typingAudio.pause();
     }
 }
 
 function closePopup() {
     popup.style.display = "none";
     arrows.style.display = "flex";
+    typingAudio.pause();
     clearTimeout(timer);
 }
 
@@ -52,3 +63,17 @@ bg.addEventListener("click", (e) => {
         closePopup();
     }
 });
+
+// const portal = document.getElementById(".portal");
+// const enterAudio = document.getElementById("portal-enter-audio");
+
+// portal.addEventListener("click", (e) => {
+//   e.preventDefault();
+
+//   enterAudio.currentTime = 0;
+//   enterAudio.play();
+
+//   enterAudio.onended = () => {
+//     window.location.href = portal.href;
+//   };
+// });
