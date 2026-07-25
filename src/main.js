@@ -5,6 +5,7 @@ if (navigator.userAgent === "Screenjesus") {
 
 const portalAudio = document.getElementById("portal-audio");
 const typingAudio = document.getElementById("typing-audio");
+const closeAudio = document.getElementById("close-audio");
 
 const bg = document.getElementById("bg");
 const popup = document.getElementById("dialogue-popup");
@@ -55,11 +56,14 @@ function closePopup() {
 }
 
 // close button
-closeBtn.addEventListener("click", closePopup);
+closeBtn.addEventListener("click", () => {
+    closeAudio.play();
+    closePopup();
+});
 
 // click outside image to close
 bg.addEventListener("click", (e) => {
-    if (e.target !== popup) {
+    if (e.target !== dialogueContainer) {
         closePopup();
     }
 });
@@ -77,3 +81,8 @@ bg.addEventListener("click", (e) => {
 //     window.location.href = portal.href;
 //   };
 // });
+
+// document.addEventListener("click", () => {
+//     portalAudio.volume = 0.40;
+//     portalAudio.muted = false;
+// }, { once: true });
