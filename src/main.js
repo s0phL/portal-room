@@ -95,7 +95,7 @@ bg.addEventListener("click", (e) => {
     }
 });
 
-// document.addEventListener("click", () => {
-//     portalAudio.volume = 0.40;
-//     portalAudio.muted = false;
-// }, { once: true });
+document.addEventListener("click", () => {
+    portalAudio.volume = 0.40;
+    portalAudio.muted = false;
+}, { once: true });
