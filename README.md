@@ -3,6 +3,7 @@
 
 - <a href="https://s0phl.github.io/portal-room/" target="_blank">webpage</a>
 - <a href="https://somebodys-random-rooms.neocities.org/" target="_blank">neocities link</a>
+- <a href="https://github.com/s0phL/somebodys-random-rooms/" target="_blank">main site repo</a>
 
 ## Running Locally
 
