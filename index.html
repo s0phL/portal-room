@@ -2,17 +2,18 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portal Room</title>
     <link rel="stylesheet" href="src/style.css">
   </head>
   <body>
+
     <div id="bg">
       <img class="bg-image" src="src/assets/main-room.png" alt="Portal Room"/>
       <img id="arrows" src="src/assets/arrows.png"/>
       <a href="https://s0phl.github.io/somebodys-random-rooms/">
-        <img class="portal" src="src/assets/animated-portal.gif" alt="Portal" title="Begin Warp"/>
+        <img id="portal" src="src/assets/animated-portal.gif" alt="Portal" title="Begin Warp"/>
       </a>
       <div id="dialogue-popup">
         <img id="dialogue-container" src="src/assets/dialogue-popup.png" alt="Dialogue Popup"/>
@@ -20,21 +21,53 @@
         <button id="close-btn">&times;</button>
       </div>
     </div>
-      <br><br>
-      <p style="color:white;">&nbsp; ooh~ secret text</p>
-      <audio id="typing-audio">
-        <source src="src/assets/digital-typing.mp3" type="audio/mpeg">
-      </audio>
-      <audio id="close-audio">
-        <source src="src/assets/digital-close-audio.mp3" type="audio/mpeg">
-      </audio>
-      <audio id="portal-audio" autoplay loop muted>
-      <!-- <audio id="portal-audio" autoplay loop>  -->
-        <source src="src/assets/nether-portal.mp3" type="audio/mpeg">
-      </audio>
-      <!-- <audio id="portal-enter-audio">
-        <source src="/src/assets/nether-portal.mp3" type="audio/mpeg">
-      </audio> -->
+
+    <div id="hud-overlay">
+      <div class="corner corner_tl"></div>
+      <div class="corner corner_tr"></div>
+      <div class="corner corner_bl"></div>
+      <div class="corner corner_br"></div>
+
+      <div class="edge edge_top"></div>
+      <div class="edge edge_bottom"></div>
+      <div class="edge edge_left"></div>
+      <div class="edge edge_right"></div>
+
+      <div class="alert-popup">
+        <h1 class="alert-title">
+          <span>!</span><span>A</span><span>L</span><span>E</span><span>R</span><span>T</span><span>!</span>
+        </h1>
+
+        <div class="alert-body">
+          <p class="alert-message"> New Message Detected. </p>
+
+          <button id="continue-btn">CONTINUE</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="cover cover_left"></div>
+    <div class="cover cover_right"></div>
+
+    <div id="crt-line"></div>
+
+    <br><br>
+    <p style="color:white;">&nbsp; ooh~ secret text</p>
+
+    <audio id="typing-audio">
+      <source src="src/assets/digital-typing.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="close-audio">
+      <source src="src/assets/digital-close-audio.mp3" type="audio/mpeg">
+    </audio>
+    <!-- <audio id="portal-audio" autoplay loop muted> -->
+    <audio id="portal-audio" autoplay loop> 
+      <source src="src/assets/nether-portal.mp3" type="audio/mpeg">
+    </audio>
+    <!-- <audio id="portal-enter-audio">
+      <source src="/src/assets/nether-portal-enter.mp3" type="audio/mpeg">
+    </audio> -->
+
     <script src="src/main.js"></script>
   </body>
 </html>
